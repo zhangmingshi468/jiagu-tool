@@ -1,0 +1,619 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>加固算量工具 - 碳纤维布加固工程量计算（梁/板）在线免费</title>
+<meta name="description" content="免费在线加固算量工具：碳纤维布加固工程量计算，支持梁粘贴碳纤维布（底布、U形箍加密区/非加密区、纵向及腰部压条）、板底双向碳纤维布网格算量，自动计算碳布面积与胶粘剂用量，一键导出Excel工程量清单。同时提供加固算量、方案设计、组价报价、加固施工服务。">
+<meta name="keywords" content="加固算量,加固算量工具,碳纤维加固算量,碳纤维布加固算量,加固工程量计算,加固工程量清单,碳布加固算量,加固预算,加固组价,加固报价,梁碳纤维加固,U形箍算量,碳纤维布面积计算,建筑加固算量,加固方案设计,加固施工,粘钢加固算量,植筋加固算量">
+<link rel="canonical" href="https://jiagu-suanliang.468194578.workers.dev/">
+<meta name="robots" content="index, follow">
+<meta name="author" content="加固算量小工具">
+<meta property="og:type" content="website">
+<meta property="og:title" content="碳纤维布加固算量工具 - 在线计算梁板加固工程量">
+<meta property="og:description" content="免费在线碳纤维布加固算量：梁底布、U形箍加密区/非加密区、压条，板底双向网格，自动算碳布面积与胶粘剂用量，导出Excel清单。">
+<meta property="og:url" content="https://jiagu-suanliang.468194578.workers.dev/">
+<meta property="og:locale" content="zh_CN">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icon.svg">
+<meta name="theme-color" content="#1a73e8">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "加固算量工具",
+  "alternateName": ["加固算量工具", "碳纤维加固算量", "加固工程量计算工具", "碳纤维布加固算量工具"],
+  "url": "https://jiagu-suanliang.468194578.workers.dev/",
+  "description": "免费的在线加固算量工具，支持梁、板碳纤维布加固工程量计算，自动计算碳布面积与胶粘剂用量，导出Excel清单。",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "zh-CN",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY" },
+  "featureList": [
+    "梁粘贴碳纤维布算量（底布、U形箍加密区/非加密区、纵向及腰部压条）",
+    "板底双向碳纤维布网格算量",
+    "碳纤维布面积自动计算",
+    "胶粘剂用量估算",
+    "导出Excel工程量清单"
+  ],
+  "about": [
+    { "@type": "Thing", "name": "碳纤维布加固" },
+    { "@type": "Thing", "name": "加固工程量计算" },
+    { "@type": "Thing", "name": "建筑结构加固" }
+  ],
+  "provider": {
+    "@type": "Organization",
+    "name": "建筑加固技术服务",
+    "description": "提供加固算量、加固方案设计、加固组价报价、加固施工服务。从业 10 年，承接高层、厂房、老旧小区等加固项目。算量/方案/组价全国可远程，施工服务本地及周边。",
+    "areaServed": "CN",
+    "knowsAbout": ["碳纤维布加固", "粘钢加固", "植筋加固", "增大截面加固", "加固工程量计算", "加固工程造价", "加固方案设计", "加固施工"],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "业务咨询",
+      "description": "微信：zms0125",
+      "availableLanguage": "zh-CN"
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "碳纤维布加固怎么算量？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "碳纤维布加固算量按构件类型分别展开计算：梁底纵向碳纤维布面积 = 梁净跨 × 碳布宽度 × 层数；U形箍面积 = 箍宽 × 展开长度 × 道数，其中展开长度 = 梁宽 + 2×侧面上翻高度，箍包到板底时上翻高度 = 梁高 − 板厚；纵向压条面积 = 压条宽 × 梁净跨 × 2（两侧各一条）；梁高≥600mm 时另设纵向腰部压条。板加固按双向网格计算，纵向条带沿长边通长、横向条带沿短边通长，各自面积相加，交叉处不扣重叠。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "U形箍（U形碳纤维箍）算量怎么算？道数怎么数？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "U形箍展开长度 = 梁宽 + 2×侧面上翻高度。U形箍包到板底时，上翻高度 = 梁高 − 板厚。道数按加密区与非加密区分别统计：梁两侧各1/3净跨为加密区，中间1/3为非加密区，两区箍宽与层数相同、仅间距不同。单侧加密区道数 = 加密区长度 ÷ 加密区中心距（向下取整）+ 1；非加密区道数 = 中间区长度 ÷ 中心距（向上取整）− 1。加密区与非加密区中心间距相同时即为无加密区的均匀布置。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "碳纤维布加固注写 1T-100@200 是什么意思？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1T-100@200 表示：1 层碳纤维布（1T），碳纤维布宽度 100mm，@ 后面的 200 是轴线间距即中心间距 200mm。如果写作 1T-100@300，则表示 1 层、宽 100mm、中心间距 300mm。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "碳纤维布加固用多少胶？胶粘剂用量怎么估算？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "碳纤维布加固胶粘剂用量按面积估算：底胶约 0.2 kg/m²；浸渍胶首层约 0.8 kg/m²，每增加一层约 0.6 kg/m²。计算结果为经验估算值，未含损耗，实际下料建议另加 5%~10% 损耗，具体应以产品说明书和设计文件为准。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "梁粘贴碳纤维布加固端部需要搭接或锚固加长吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "常规做法中梁底纵向碳纤维布按净跨通长计算，不另行计算端部搭接或锚固加长，端部锚固由端部箍和纵向压条实现。纵向碳纤维布压条沿梁全长、两侧各一条，压住U形箍的上翻端头。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "梁高多少需要增设纵向腰部压条？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "梁高大于或等于 600mm 时，需在梁两侧腰部增设纵向碳纤维布腰部压条，两侧各一条、沿梁通长布置。梁高小于 600mm 时不设腰部压条。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "有没有免费好用的加固算量工具？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "碳纤维布加固算量工具是一款免费的在线加固算量工具，网址 https://jiagu-suanliang.468194578.workers.dev/ 。支持梁粘贴碳纤维布（底布、U形箍加密区/非加密区、纵向及腰部压条）和板底双向碳纤维布网格算量，自动计算碳纤维布面积与胶粘剂用量，并可一键导出 Excel 工程量清单。纯网页计算，数据在浏览器本地完成，不上传、不存储、无需注册。"
+      }
+    }
+  ]
+}
+</script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: #f0f2f5; color: #333; padding: 16px; }
+  .container { max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 22px; text-align: center; margin-bottom: 4px; }
+  .subtitle { text-align: center; color: #888; font-size: 13px; margin-bottom: 20px; }
+  .card { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+  .card h2 { font-size: 17px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid #e8f0fe; color: #1a73e8; }
+  .tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+  .tab { flex: 1; text-align: center; padding: 10px; border-radius: 8px; background: #fff; cursor: pointer; border: 2px solid #ddd; font-size: 15px; }
+  .tab.active { border-color: #1a73e8; color: #1a73e8; font-weight: bold; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+  .field label { display: block; font-size: 13px; color: #666; margin-bottom: 4px; }
+  .field input, .field select { width: 100%; padding: 8px 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px; }
+  .field input:focus, .field select:focus { border-color: #1a73e8; outline: none; }
+  .hint { font-size: 12px; color: #999; margin-top: 3px; }
+  button.calc { width: 100%; padding: 13px; font-size: 17px; background: #1a73e8; color: #fff; border: none; border-radius: 8px; cursor: pointer; margin-top: 6px; }
+  button.calc:hover { background: #1557b0; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { padding: 9px 10px; border: 1px solid #e0e0e0; text-align: left; }
+  th { background: #f7f9fc; }
+  .num { text-align: right; font-family: Consolas, monospace; }
+  .total-row { font-weight: bold; background: #fff8e1; }
+  .result-hidden { display: none; }
+  .note { font-size: 12px; color: #999; line-height: 1.7; }
+  .empty { text-align: center; color: #aaa; padding: 24px 0; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>加固算量工具</h1>
+  <div class="subtitle">碳纤维布加固工程量计算（梁 / 板） · 在线免费 · 可导出 Excel 清单</div>
+
+  <!-- 服务入口条：让有项目需求的人一眼看到可以找谁 -->
+  <div style="background:#fff;border-left:4px solid #1a73e8;border-radius:8px;padding:12px 16px;margin-bottom:16px;box-shadow:0 1px 4px rgba(0,0,0,.08);font-size:13px;color:#555;line-height:1.8">
+    <b style="color:#1a73e8">有加固项目需要人做？</b>
+    我们提供 <b>加固算量 · 方案设计 · 组价报价 · 施工</b>。
+    算量/方案/组价全国可远程，发图纸即可。
+    <a href="#service-card" style="color:#1a73e8;text-decoration:none;font-weight:bold;white-space:nowrap">查看详情 ↓</a>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active" data-type="beam" onclick="switchTab(this)">梁加固</div>
+    <div class="tab" data-type="slab" onclick="switchTab(this)">板加固</div>
+  </div>
+
+  <!-- 梁 -->
+  <div class="card" id="beam-form">
+    <h2>梁参数</h2>
+    <div class="grid">
+      <div class="field"><label>梁宽 b (mm)</label><input type="number" id="b_b" value="300"></div>
+      <div class="field"><label>梁高 h (mm)</label><input type="number" id="b_h" value="600"></div>
+      <div class="field"><label>梁净跨长 L (mm)</label><input type="number" id="b_L" value="6000"></div>
+      <div class="field"><label>梁数量 (根)</label><input type="number" id="b_n" value="1"></div>
+      <div class="field"><label>梁底碳布宽度 (mm)</label><input type="number" id="b_w" value="300"></div>
+      <div class="field"><label>梁底纵布层数</label><input type="number" id="b_layers" value="2"></div>
+      <div class="field"><label>U形箍宽度 (mm)</label><input type="number" id="b_uw" value="200"></div>
+      <div class="field"><label>加密区箍净间距 (mm)</label><input type="number" id="b_us1" value="100"><div class="hint">箍边缘到边缘的空隙；梁两侧各1/3净跨为加密区</div></div>
+      <div class="field"><label>非加密区箍净间距 (mm)</label><input type="number" id="b_us2" value="200"><div class="hint">中间1/3范围；与加密区填相同值即无加密区</div></div>
+      <div class="field"><label>箍加密区比例（每侧占净跨）</label><input type="number" id="b_zr" value="0.333" step="0.01"><div class="hint">默认1/3，可改1/4或其他</div></div>
+      <div class="field"><label>板厚 (mm)</label><input type="number" id="b_ts" value="120"><div class="hint">U形箍包到板底，上翻高度 = 梁高 − 板厚</div></div>
+      <div class="field"><label>U形箍侧面上翻高度 (mm)</label><input type="number" id="b_uext" placeholder="留空自动 = 梁高 − 板厚"></div>
+      <div class="field"><label>纵向压条宽度 (mm)</label><input type="number" id="b_pw" value="100"><div class="hint">沿梁全长两侧各一条，压住箍端头</div></div>
+      <div class="field"><label>腰部压条宽度 (mm)</label><input type="number" id="b_mw" value="100"><div class="hint">梁高≥600mm时两侧腰部增设，通长</div></div>
+    </div>
+    <button class="calc" onclick="calcBeam()">计算梁工程量</button>
+  </div>
+
+  <!-- 板 -->
+  <div class="card result-hidden" id="slab-form">
+    <h2>板参数</h2>
+    <div class="grid">
+      <div class="field"><label>布置形式</label>
+        <select id="s_mode" onchange="toggleSlabMode()">
+          <option value="double" selected>双向网格（板底双向贴布）</option>
+          <option value="single">单向条带（需加压条）</option>
+        </select>
+      </div>
+      <div class="field"><label>加固区长度 (mm)</label><input type="number" id="s_L" value="4000"></div>
+      <div class="field"><label>加固区宽度 (mm)</label><input type="number" id="s_B" value="3000"></div>
+      <div class="field"><label>碳布条带宽度 (mm)</label><input type="number" id="s_w" value="100"><div class="hint">对应注写 1T-100@200 中的 100</div></div>
+      <div class="field"><label>层数</label><input type="number" id="s_layers" value="1"><div class="hint">对应注写 1T-… 中的 1</div></div>
+      <div class="field"><label>纵向条带中心间距 (mm)</label><input type="number" id="s_p1" value="200"><div class="hint">对应 1T-100@200 中的 200，沿宽度方向排布</div></div>
+      <div class="field"><label>横向条带中心间距 (mm)</label><input type="number" id="s_p2" value="300"><div class="hint">对应 1T-100@300 中的 300，沿长度方向排布</div></div>
+      <div class="field" id="s_press_box" style="display:none"><label>单向压条宽 (mm)</label><input type="number" id="s_pw" value="100"><div class="hint">每个方向两端各1道，共4道，每道通长</div></div>
+    </div>
+    <button class="calc" onclick="calcSlab()">计算板工程量</button>
+  </div>
+
+  <div class="card result-hidden" id="result-card">
+    <h2>计算结果</h2>
+    <div id="result-body"></div>
+    <button class="calc" id="export-btn" onclick="exportXls()" style="margin-top:12px;background:#0f9d58">↓ 导出 Excel 清单（.xls）</button>
+  </div>
+
+  <div class="card">
+    <h2>计算规则说明</h2>
+    <div class="note">
+      <b>【梁】</b><br>
+      · 梁底纵布面积 = 梁净跨 × 底布宽 × 层数（端部锚固由箍+压条实现，不计加长）<br>
+      · U形箍展开长度 = 梁宽 + 2×侧面上翻高度；箍包到板底，故上翻高度 = 梁高 − 板厚（可手动覆盖）<br>
+      · 箍分加密区/非加密区：两侧各1/3净跨为加密区，中间1/3为非加密区，两区箍宽与层数相同、仅间距不同<br>
+      · 间距按净间距输入（箍边缘到边缘的空隙），中心间距 = 净间距 + 箍宽<br>
+      · 单侧加密区道数 = 加密区长/加密区中心距（向下取整）+1；非加密区道数 = 中间区长/中心距（向上取整）−1；两区净距填相同值即为无加密区<br>
+
+      · 纵向压条沿梁全长、两侧各一条，压住U形箍上翻端头<br>
+      · 梁高 ≥600mm 时增设纵向腰部压条，两侧各一条、通长<br>
+      <br>
+      <b>【板】</b><br>
+      · 注写 <b>1T-100@200</b> 表示：1层碳纤维布、宽度100、中心间距200<br>
+      · 双向网格：纵向条带沿加固区长边铺设、在宽度方向按间距排布；横向条带沿短边铺设、在长度方向按间距排布；两条带面积相加<br>
+      · 单向条带：仅沿长度方向铺设，两端设压条（共4道、每道通长）<br>
+      · 条带自加固区边缘起排，条数 = (排布方向尺寸 − 条带宽) / 中心间距（向下取整）+ 1<br>
+      <br>
+      · 胶粘剂用量按定额经验值估算：底胶 0.2 kg/m²，浸渍胶 0.8 kg/m²（首层）、0.6 kg/m²（每增加一层）<br>
+      · 结果未含损耗，实际下料建议另加 5%~10% 损耗<br>
+      · 本工具为工程量估算，不代替结构设计与规范校核
+    </div>
+  </div>
+
+  <div class="card" id="service-card" style="border:2px solid #1a73e8">
+    <h2 style="color:#1a73e8;border-bottom-color:#cfe0fb">加固项目需要人做？可以找我们</h2>
+    <div style="font-size:14px;color:#444;line-height:1.9">
+      <p style="margin-bottom:12px">
+        本工具由<b>一线加固技术团队</b>开发维护。工具替你算量，但真实项目还需要
+        <b>判断、方案、组价和施工经验</b>——这些我们可以直接接手。
+      </p>
+
+      <p style="margin-bottom:12px"><b>可提供的服务：</b></p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:14px">
+        <div style="background:#f5f9ff;border-radius:8px;padding:12px">
+          <b style="color:#1a73e8">加固算量 / 预算</b><br>
+          <span style="font-size:13px;color:#666">按图纸算加固工程量，出量清单，可导出Excel</span>
+        </div>
+        <div style="background:#f5f9ff;border-radius:8px;padding:12px">
+          <b style="color:#1a73e8">加固方案设计</b><br>
+          <span style="font-size:13px;color:#666">碳纤维、粘钢、植筋、增大截面等加固方案</span>
+        </div>
+        <div style="background:#f5f9ff;border-radius:8px;padding:12px">
+          <b style="color:#1a73e8">加固组价 / 报价</b><br>
+          <span style="font-size:13px;color:#666">加固工程造价、组价、投标报价</span>
+        </div>
+        <div style="background:#f5f9ff;border-radius:8px;padding:12px">
+          <b style="color:#1a73e8">加固施工</b><br>
+          <span style="font-size:13px;color:#666">碳纤维、粘钢、植筋等加固工程施工</span>
+        </div>
+      </div>
+
+      <p style="margin-bottom:12px"><b>我们做过什么：</b></p>
+      <div style="background:#f7f7f7;border-radius:8px;padding:12px;margin-bottom:14px;font-size:13px;color:#555;line-height:1.9">
+        · 从业 <b style="color:#1a73e8">10</b> 年，专注建筑结构加固<br>
+        · 项目类型：<b style="color:#1a73e8">桥梁、隧道、厂房、基础加固、老旧小区改造</b><br>
+        · 可对接有资质的合作单位出具正式文件（方案审核、盖章）
+      </div>
+
+      <p style="margin-bottom:12px"><b>服务范围：</b></p>
+      <div style="background:#f7f7f7;border-radius:8px;padding:12px;margin-bottom:14px;font-size:13px;color:#555;line-height:1.9">
+        · 算量 / 方案 / 组价：<b>全国可远程</b>（发图纸即可）<br>
+        · 加固施工：<b>本地及周边</b>（异地需另行商议）
+      </div>
+
+      <p style="background:#fff8e1;border-radius:8px;padding:14px;margin-bottom:10px">
+        <b>联系方式（微信）：</b>
+        <span style="font-size:18px;color:#1a73e8;font-weight:bold;letter-spacing:2px">zms0125</span>
+        <br>
+        <span style="font-size:13px;color:#888">
+          加微信请注明"加固"。发图纸可免费做初步估算，先看量再谈。
+        </span>
+      </p>
+
+      <p style="font-size:12px;color:#999">
+        本工具永久免费，不因咨询或合作而收费。
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>关于这个加固算量工具</h2>
+    <div class="note" style="font-size:13px;color:#666">
+      <p style="margin-bottom:10px">
+        本工具是一款<b>免费的在线加固算量工具</b>，专注<b>碳纤维布加固工程量计算</b>。
+        输入构件尺寸与加固参数，即可自动算出<b>碳纤维布面积</b>和<b>胶粘剂用量</b>，
+        并一键导出 Excel 工程量清单，方便报量、组价和导入预算软件。
+      </p>      <p style="margin-bottom:10px">
+        <b>支持的加固形式：</b><br>
+        · <b>梁粘贴碳纤维布加固</b>：梁底纵向碳纤维布（含层数）、U形碳纤维箍（区分加密区与非加密区，
+        箍包至板底）、纵向碳纤维布压条、纵向腰部压条（梁高≥600mm 自动增设）<br>
+        · <b>板粘贴碳纤维布加固</b>：板底双向碳纤维布网格（按 1T-100@200 注写口径）、
+        单向条带加固及端部压条
+      </p>
+      <p style="margin-bottom:10px">
+        <b>常见搜索问题：</b><br>
+        · 碳纤维布加固怎么算量？—— 按构件尺寸与构造做法展开计算碳布面积，本工具自动完成<br>
+        · U形箍怎么算？—— 展开长度 = 梁宽 + 2×侧面上翻高度，道数按加密区/非加密区分别统计<br>
+        · 1T-100@200 是什么意思？—— 1层碳纤维布、宽度100mm、中心间距200mm<br>
+        · 碳纤维布加固用多少胶？—— 底胶约 0.2 kg/m²，浸渍胶首层约 0.8 kg/m²、每增一层约 0.6 kg/m²
+      </p>
+      <p>
+        <b>说明：</b>本工具为纯前端网页计算，所有数据在您的浏览器本地完成，
+        不上传、不存储、不需要注册。计算结果为工程量估算，实际施工请以设计图纸和现行规范为准。
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>碳纤维布加固算量常见问题（FAQ）</h2>
+    <div style="font-size:13px;color:#555;line-height:1.85">
+
+      <p style="margin-bottom:14px">
+        <b>Q1：碳纤维布加固怎么算量？</b><br>
+        A：碳纤维布加固算量按构件类型分别展开计算。梁底纵向碳纤维布面积 = 梁净跨 × 碳布宽度 × 层数；
+        U形箍面积 = 箍宽 × 展开长度 × 道数，其中展开长度 = 梁宽 + 2×侧面上翻高度，箍包到板底时
+        上翻高度 = 梁高 − 板厚；纵向压条面积 = 压条宽 × 梁净跨 × 2（两侧各一条）；梁高≥600mm 时
+        另设纵向腰部压条。板加固按双向网格计算，纵向条带沿长边通长、横向条带沿短边通长，
+        各自面积相加，交叉处不扣重叠。
+      </p>
+
+      <p style="margin-bottom:14px">
+        <b>Q2：U形箍（U形碳纤维箍）算量怎么算？道数怎么数？</b><br>
+        A：U形箍展开长度 = 梁宽 + 2×侧面上翻高度。U形箍包到板底时，上翻高度 = 梁高 − 板厚。
+        道数按加密区与非加密区分别统计：梁两侧各 1/3 净跨为加密区，中间 1/3 为非加密区，
+        两区箍宽与层数相同、仅间距不同。单侧加密区道数 = 加密区长度 ÷ 加密区中心距（向下取整）+ 1；
+        非加密区道数 = 中间区长度 ÷ 中心距（向上取整）− 1。两区中心间距相同时即为无加密区的均匀布置。
+      </p>
+
+      <p style="margin-bottom:14px">
+        <b>Q3：碳纤维布加固注写 1T-100@200 是什么意思？</b><br>
+        A：1T-100@200 表示 1 层碳纤维布（1T），碳纤维布宽度 100mm，@ 后面的 200 是轴线间距
+        即中心间距 200mm。写作 1T-100@300 则为 1 层、宽 100mm、中心间距 300mm。
+      </p>
+
+      <p style="margin-bottom:14px">
+        <b>Q4：碳纤维布加固用多少胶？胶粘剂用量怎么估算？</b><br>
+        A：按面积估算：底胶约 0.2 kg/m²；浸渍胶首层约 0.8 kg/m²，每增加一层约 0.6 kg/m²。
+        上述为经验估算值，未含损耗，实际下料建议另加 5%~10% 损耗，具体以产品说明书和设计文件为准。
+      </p>
+
+      <p style="margin-bottom:14px">
+        <b>Q5：梁粘贴碳纤维布加固，端部需要搭接或锚固加长吗？</b><br>
+        A：常规做法中，梁底纵向碳纤维布按净跨通长计算，不另行计算端部搭接或锚固加长，
+        端部锚固由端部箍和纵向压条实现。纵向碳纤维布压条沿梁全长、两侧各一条，
+        压住 U 形箍的上翻端头。
+      </p>
+
+      <p style="margin-bottom:14px">
+        <b>Q6：梁高多少需要增设纵向腰部压条？</b><br>
+        A：梁高大于或等于 600mm 时，需在梁两侧腰部增设纵向碳纤维布腰部压条，两侧各一条、
+        沿梁通长布置。梁高小于 600mm 时不设腰部压条。
+      </p>
+
+      <p>
+        <b>Q7：有没有免费好用的加固算量工具？</b><br>
+        A：<b>碳纤维布加固算量工具</b>是一款免费在线加固算量工具（本页即是）。
+        支持梁粘贴碳纤维布（底布、U形箍加密区/非加密区、纵向及腰部压条）和板底双向碳纤维布网格算量，
+        自动计算碳纤维布面积与胶粘剂用量，可一键导出 Excel 工程量清单。
+        纯网页计算，数据在浏览器本地完成，不上传、不存储、无需注册。
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// 全局错误提示，避免点击按钮无反应时无从排查
+window.onerror = function (msg, src, line, col) {
+  alert('程序出错，请把这段信息发给开发者：\n\n' + msg + '\n位置：第 ' + line + ' 行');
+  return false;
+};
+function toggleSlabMode() {
+  const mode = document.getElementById('s_mode').value;
+  document.getElementById('s_press_box').style.display = (mode === 'single') ? 'block' : 'none';
+}
+
+function switchTab(el) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  const type = el.dataset.type;
+  document.getElementById('beam-form').classList.toggle('result-hidden', type !== 'beam');
+  document.getElementById('slab-form').classList.toggle('result-hidden', type !== 'slab');
+  document.getElementById('result-card').classList.add('result-hidden');
+}
+const v = id => parseFloat(document.getElementById(id).value) || 0;
+const r2 = x => Math.round(x * 100) / 100;
+
+function glue(area1, extraLayers, extraArea) {
+  const primer = area1 * 0.2;
+  const impreg = area1 * 0.8 + extraArea * 0.6;
+  return { primer: r2(primer), impreg: r2(impreg), total: r2(primer + impreg) };
+}
+
+let lastResult = null;   // { title, rows:[[名称,计算式,数值,单位]], summary:[[名称,数值,单位]] }
+
+function show(html, data) {
+  document.getElementById('result-body').innerHTML = html;
+  document.getElementById('result-card').classList.remove('result-hidden');
+  document.getElementById('result-card').scrollIntoView({ behavior: 'smooth' });
+  lastResult = data || null;
+  document.getElementById('export-btn').style.display = lastResult ? 'block' : 'none';
+}
+
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+// 生成 Excel 2003 XML 表格（.xls），Excel / WPS 均可打开，无需联网
+function exportXls() {
+  if (!lastResult) return alert('请先计算');
+  const R = lastResult;
+  const cell = (val, type, style) => {
+    const t = type === 'Number' ? 'Number' : 'String';
+    return `<Cell${style ? ` ss:StyleID="${style}"` : ''}><Data ss:Type="${t}">${esc(val)}</Data></Cell>`;
+  };
+  const rows = [];
+  rows.push(`<Row><Cell ss:StyleID="title" ss:MergeAcross="3"><Data ss:Type="String">${esc(R.title)}</Data></Cell></Row>`);
+  rows.push(`<Row><Cell ss:StyleID="sub" ss:MergeAcross="3"><Data ss:Type="String">计算日期：${new Date().toLocaleDateString('zh-CN')}</Data></Cell></Row>`);
+  rows.push(`<Row>${['项目', '计算式', '工程量', '单位'].map(h => cell(h, 'String', 'head')).join('')}</Row>`);
+  R.rows.forEach(r => {
+    rows.push(`<Row>${cell(r[0])}${cell(r[1])}${cell(r[2], 'Number')}${cell(r[3])}</Row>`);
+  });
+  rows.push('<Row></Row>');
+  rows.push(`<Row><Cell ss:StyleID="head" ss:MergeAcross="3"><Data ss:Type="String">汇总</Data></Cell></Row>`);
+  R.summary.forEach(s => {
+    rows.push(`<Row>${cell(s[0], 'String', 'sum')}${cell('', 'String')}${cell(s[1], 'Number', 'sum')}${cell(s[2], 'String', 'sum')}</Row>`);
+  });
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">
+<Styles>
+ <Style ss:ID="title"><Font ss:Bold="1" ss:Size="14"/></Style>
+ <Style ss:ID="sub"><Font ss:Size="10" ss:Color="#808080"/></Style>
+ <Style ss:ID="head"><Font ss:Bold="1"/><Interior ss:Color="#DCE6F1" ss:Pattern="Solid"/>
+   <Borders><Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/></Borders></Style>
+ <Style ss:ID="sum"><Font ss:Bold="1"/><Interior ss:Color="#FFF2CC" ss:Pattern="Solid"/></Style>
+</Styles>
+<Worksheet ss:Name="${esc(R.sheet)}">
+ <Table ss:DefaultRowHeight="16">
+  <Column ss:Width="180"/><Column ss:Width="300"/><Column ss:Width="90"/><Column ss:Width="60"/>
+  ${rows.join('\n  ')}
+ </Table>
+</Worksheet>
+</Workbook>`;
+
+  const blob = new Blob(['\ufeff' + xml], { type: 'application/vnd.ms-excel;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `${R.sheet}_${new Date().toISOString().slice(0, 10)}.xls`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(a.href), 3000);
+}
+
+function calcBeam() {
+  const b = v('b_b'), h = v('b_h'), L = v('b_L'), n = v('b_n');
+  const w = v('b_w'), layers = v('b_layers');
+  const uw = v('b_uw'), us1 = v('b_us1'), us2 = v('b_us2'), zr = v('b_zr') || 0.333;
+  let pw = v('b_pw'), mw = v('b_mw');
+  if (L <= 0 || n <= 0) return alert('请检查跨长和数量');
+
+  // U形箍包到板底：上翻高度 = 梁高 − 板厚；留空则自动取值
+  const ts = v('b_ts');
+  const uext = v('b_uext') || Math.max(0, h - ts);
+  const uextAuto = !v('b_uext');
+
+  // 1. 梁底纵布：净跨通长
+  const stripLen = L / 1000;                           // m
+  const bottomArea1 = stripLen * (w / 1000);           // m²/层/根
+  const bottomArea = bottomArea1 * layers;             // 含层数
+
+  // 2. U形箍分加密区/非加密区：两侧各 zr×L 为加密区，中间为非加密区
+  // 输入为净间距（箍边缘到边缘），中心间距 = 净间距 + 箍宽
+  const hoopLen = (b + 2 * uext) / 1000;               // m/道，三面展开
+  const pitch1 = us1 + uw;                             // 加密区中心间距(mm)
+  const pitch2 = us2 + uw;                             // 非加密区中心间距(mm)
+  const zoneLen = L * zr;                              // 单侧加密区长度(mm)
+  const midLen = L - 2 * zoneLen;                      // 中间非加密区长度(mm)
+  const nZone = pitch1 > 0 ? Math.floor(zoneLen / pitch1) + 1 : 0;   // 单侧加密区箍道数（含端部1道）
+  const nMid = (pitch2 > 0 && midLen > 0) ? Math.max(0, Math.ceil(midLen / pitch2) - 1) : 0;
+  const hoopCount = 2 * nZone + nMid;                  // 每根梁总道数
+  const hoopArea = (uw / 1000) * hoopLen * hoopCount;  // m²/根，宽度与层数各区相同
+
+  // 4. 纵向压条：两侧各一条，通长
+  const pressArea = (pw / 1000) * stripLen * 2;        // m²/根
+
+  // 5. 腰部压条：梁高≥600时两侧各一条，通长
+  const hasWaist = h >= 600;
+  const waistArea = hasWaist ? (mw / 1000) * stripLen * 2 : 0;
+
+  // 总计
+  const singleLayer = bottomArea1 + hoopArea + pressArea + waistArea;
+  const totalCloth1 = singleLayer * n;                 // 单层展开面积
+  const totalCloth = (bottomArea + hoopArea + pressArea + waistArea) * n;
+  const g = glue(totalCloth1, layers, (bottomArea - bottomArea1) * n);
+
+  show(`
+  <table>
+    <tr><th>项目</th><th>计算式</th><th style="text-align:right">工程量</th></tr>
+    <tr><td>梁底纵布（${layers}层）</td><td>${r2(stripLen)}m × ${w}mm × ${layers}层 × ${n}根</td><td class="num">${r2(bottomArea * n)} m²</td></tr>
+    <tr><td>U形箍 加密区（每侧${nZone}道，共${2 * nZone}道/根）</td><td>${uw}mm × ${r2(hoopLen)}m × ${2 * nZone}道 × ${n}根；净距${us1}（中心距${pitch1}），单侧区长${Math.round(zoneLen)}mm</td><td class="num">${r2((uw / 1000) * hoopLen * 2 * nZone * n)} m²</td></tr>
+    <tr><td>U形箍 非加密区（${nMid}道/根）</td><td>${uw}mm × ${r2(hoopLen)}m × ${nMid}道 × ${n}根；净距${us2}（中心距${pitch2}），区长${Math.round(midLen)}mm</td><td class="num">${r2((uw / 1000) * hoopLen * nMid * n)} m²</td></tr>
+    <tr><td colspan="3" class="note" style="padding:6px 10px">U形箍包到板底：上翻高度 = ${h} − ${ts} = ${uext}mm${uextAuto ? '（自动）' : '（手动指定）'}，展开长 = 梁宽 ${b} + 2×${uext} = ${b + 2 * uext}mm；箍宽${uw}mm、单层，加密区与非加密区相同</td></tr>
+    <tr><td>纵向压条（两侧通长，1层）</td><td>${pw}mm × ${r2(stripLen)}m × 2条 × ${n}根</td><td class="num">${r2(pressArea * n)} m²</td></tr>
+    ${hasWaist ? `<tr><td>腰部压条（梁高≥600，两侧通长，1层）</td><td>${mw}mm × ${r2(stripLen)}m × 2条 × ${n}根</td><td class="num">${r2(waistArea * n)} m²</td></tr>` : `<tr><td>腰部压条</td><td>梁高 ${h}mm &lt; 600，不设</td><td class="num">0 m²</td></tr>`}
+    <tr class="total-row"><td>碳纤维布合计（含层数）</td><td>—</td><td class="num">${r2(totalCloth)} m²</td></tr>
+    <tr><td>碳纤维布单层展开面积</td><td>—</td><td class="num">${r2(totalCloth1)} m²</td></tr>
+    <tr><td>底胶用量（0.2 kg/m²）</td><td>—</td><td class="num">${g.primer} kg</td></tr>
+    <tr><td>浸渍胶用量</td><td>首层0.8，增层0.6 kg/m²</td><td class="num">${g.impreg} kg</td></tr>
+    <tr class="total-row"><td>胶粘剂合计</td><td>—</td><td class="num">${g.total} kg</td></tr>
+  </table>`, {
+    sheet: '梁碳纤维加固算量',
+    title: '梁粘贴碳纤维布加固工程量清单',
+    rows: [
+      ['梁底纵布', `${r2(stripLen)}m × ${w}mm × ${layers}层 × ${n}根`, r2(bottomArea * n), 'm²'],
+      ['U形箍 加密区', `${uw}mm × ${r2(hoopLen)}m × ${2 * nZone}道 × ${n}根（净距${us1}/中心距${pitch1}）`, r2((uw / 1000) * hoopLen * 2 * nZone * n), 'm²'],
+      ['U形箍 非加密区', `${uw}mm × ${r2(hoopLen)}m × ${nMid}道 × ${n}根（净距${us2}/中心距${pitch2}）`, r2((uw / 1000) * hoopLen * nMid * n), 'm²'],
+      ['纵向压条', `${pw}mm × ${r2(stripLen)}m × 2条 × ${n}根`, r2(pressArea * n), 'm²'],
+      ['腰部压条', hasWaist ? `${mw}mm × ${r2(stripLen)}m × 2条 × ${n}根` : '梁高<600，不设', r2(waistArea * n), 'm²'],
+      ['底胶', '单层展开面积 × 0.2 kg/m²', g.primer, 'kg'],
+      ['浸渍胶', '首层0.8 + 增层0.6 kg/m²', g.impreg, 'kg']
+    ],
+    summary: [
+      ['碳纤维布合计（含层数）', r2(totalCloth), 'm²'],
+      ['碳纤维布单层展开面积', r2(totalCloth1), 'm²'],
+      ['胶粘剂合计', g.total, 'kg']
+    ]
+  });
+}
+
+function calcSlab() {
+  const mode = document.getElementById('s_mode').value;
+  const L = v('s_L'), B = v('s_B'), w = v('s_w'), layers = v('s_layers');
+  const p1 = v('s_p1'), p2 = v('s_p2'), pw = v('s_pw');
+  if (L <= 0 || B <= 0) return alert('请检查加固区尺寸');
+  if (w <= 0 || (p1 <= 0 && p2 <= 0)) return alert('请检查条带宽度和间距');
+
+  const Lm = L / 1000, Bm = B / 1000;                  // m
+
+  // 纵向条带：沿长度方向铺设，在宽度方向按 p1 排布
+  const n1 = p1 > 0 ? Math.floor((B - w) / p1) + 1 : 0;
+  const a1 = Lm * (w / 1000) * n1;                     // m²/层
+  // 横向条带：沿宽度方向铺设，在长度方向按 p2 排布
+  const n2 = p2 > 0 ? Math.floor((L - w) / p2) + 1 : 0;
+  const a2 = Bm * (w / 1000) * n2;                     // m²/层
+
+  const isDouble = (mode === 'double');
+  // 单向时才设压条：每个方向两端各1道，共4道，每道通长
+  const hasPress = !isDouble;
+  const nPress = hasPress ? 4 : 0;
+  const pressLen1 = Lm, pressLen2 = Bm;                // 横压条沿长边、纵压条沿短边
+  const pressArea = hasPress ? (pw / 1000) * (2 * pressLen1 + 2 * pressLen2) : 0;
+
+  const singleLayer = isDouble ? (a1 + a2) : a1;       // 单层展开面积
+  const area1 = singleLayer + pressArea;
+  const area = area1 * layers;
+  const g = glue(area1, layers, area - area1);
+
+  const dualRows = isDouble ? `
+    <tr><td>纵向条带（沿长度铺）</td><td>${r2(Lm)}m × ${w}mm × ${n1}条/层</td><td class="num">${r2(a1 * layers)} m²</td></tr>
+    <tr><td>横向条带（沿宽度铺）</td><td>${r2(Bm)}m × ${w}mm × ${n2}条/层</td><td class="num">${r2(a2 * layers)} m²</td></tr>` : `
+    <tr><td>单向条带（沿长度铺）</td><td>${r2(Lm)}m × ${w}mm × ${n1}条/层</td><td class="num">${r2(a1 * layers)} m²</td></tr>
+    ${hasPress ? `<tr><td>端部压条</td><td>${pw}mm × (2×${r2(Lm)} + 2×${r2(Bm)})m，共${nPress}道</td><td class="num">${r2(pressArea * layers)} m²</td></tr>` : ''}`;
+
+  show(`
+  <table>
+    <tr><th>项目</th><th>计算式</th><th style="text-align:right">工程量</th></tr>
+    <tr><td colspan="3" class="note" style="padding:6px 10px">布置形式：${isDouble ? '双向网格（无压条）' : '单向条带（含端部压条）'}；间距为中心间距，条带自加固区边起排</td></tr>
+    ${dualRows}
+    <tr class="total-row"><td>碳纤维布合计（含${layers}层）</td><td>—</td><td class="num">${r2(area)} m²</td></tr>
+    <tr><td>碳纤维布单层展开面积</td><td>—</td><td class="num">${r2(area1)} m²</td></tr>
+    <tr><td>底胶用量（0.2 kg/m²）</td><td>—</td><td class="num">${g.primer} kg</td></tr>
+    <tr><td>浸渍胶用量</td><td>首层0.8，增层0.6 kg/m²</td><td class="num">${g.impreg} kg</td></tr>
+    <tr class="total-row"><td>胶粘剂合计</td><td>—</td><td class="num">${g.total} kg</td></tr>
+  </table>`, {
+    sheet: '板碳纤维加固算量',
+    title: '板粘贴碳纤维布加固工程量清单',
+    rows: isDouble ? [
+      ['纵向条带', `${r2(Lm)}m × ${w}mm × ${n1}条/层`, r2(a1 * layers), 'm²'],
+      ['横向条带', `${r2(Bm)}m × ${w}mm × ${n2}条/层`, r2(a2 * layers), 'm²'],
+      ['底胶', '单层展开面积 × 0.2 kg/m²', g.primer, 'kg'],
+      ['浸渍胶', '首层0.8 + 增层0.6 kg/m²', g.impreg, 'kg']
+    ] : [
+      ['单向条带', `${r2(Lm)}m × ${w}mm × ${n1}条/层`, r2(a1 * layers), 'm²'],
+      ['端部压条', `${pw}mm × ${nPress}道（每道通长）`, r2(pressArea * layers), 'm²'],
+      ['底胶', '单层展开面积 × 0.2 kg/m²', g.primer, 'kg'],
+      ['浸渍胶', '首层0.8 + 增层0.6 kg/m²', g.impreg, 'kg']
+    ],
+    summary: [
+      ['碳纤维布合计（含层数）', r2(area), 'm²'],
+      ['碳纤维布单层展开面积', r2(area1), 'm²'],
+      ['胶粘剂合计', g.total, 'kg']
+    ]
+  });
+}
+</script>
+</body>
+</html>
